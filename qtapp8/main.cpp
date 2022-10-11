@@ -1,31 +1,33 @@
 #include <QApplication>
-//#include <QPushButton>
-#include "window.h"
+#include <QProgressBar>
+#include <QSlider>
+//#include "window.h"
 
 int main(int argc, char **argv)
 {
     QApplication app (argc, argv);
-    // bygg ett fönster och skapa "barn" genom parenting system
-    Window window;
-    //window.setFixedSize(100, 50);
 
-    //QPushButton *button = new QPushButton("Hello World!", &window);
-    //button->setGeometry(10,10,80,30);
-    // parenting system
-    //QPushButton button2 ("testknapp", &button);
-    // ändra texten på knappen
-    //button.setText("This is text");
-    // inforuta för knappen
-    //button.setToolTip("This is a tooltip");
-    // ändra typsnitt
-    //QFont font ("Courier");
-    //button.setFont(font);
-    // sätt ikon för knappen
-    /*
-     * QIcon icon ("absolute/path/icon.png");
-     * button.setIcon(icon);
-     */
+    // create container window
+    QWidget window;
+    window.setFixedSize(200, 80);
+
+    // create progress bar 0 - 100
+    QProgressBar *progressbar = new QProgressBar(&window);
+    progressbar->setRange(0,100);
+    progressbar->setValue(0);
+    progressbar->setGeometry(10,10,180,30);
+
+    // create slider 0 - 100
+    QSlider *slider = new QSlider(&window);
+    slider->setOrientation(Qt::Horizontal);
+    slider->setRange(0,100);
+    slider->setValue(0);
+    slider->setGeometry(10,40,180,30);
+
     window.show();
+
+    // connection for progress bar values while slider value changes
+    QObject::connect(slider, SIGNAL(valueChanged(int)), progressbar, SLOT(setValue(int)));
 
     return app.exec();
 }
