@@ -17,26 +17,24 @@ MainWindow::~MainWindow()
 // skapade via designer. right click-> go to slot
 void MainWindow::on_lineEdit_returnPressed()
 {
-
+    // hämta värdet från lineEdit
+    int i = ui->lineEdit->text().toInt();
+    // tillskriv värdet spinboxstregring
+    ui->spinBoxBlue->setSingleStep(i);
+    ui->spinBoxGreen->setSingleStep(i);
+    ui->spinBoxRed->setSingleStep(i);
 }
-// eventuellt överflödigt
+/* eventuellt överflödigt
 void MainWindow::on_increaseButton_clicked()
 {
-    /*
-    if(ui->spinBoxBlue->value() > 254 || ui->spinBoxGreen->value() > 254 || ui->spinBoxRed->value() > 254)
-    {
-        QMessageBox message;
-        message.setText("Högsta värde är 255");
-        int ret = message.exec();
-    }
-    */
+
 }
-// eventuellt överflödigt
+
 void MainWindow::on_decreaseButton_clicked()
 {
 
 }
-
+*/
 void MainWindow::on_verticalSliderRed_valueChanged(int value)
 {
     QMessageBox message;
@@ -82,22 +80,21 @@ void MainWindow::on_verticalSliderBlue_valueChanged(int value)
         message.exec();
     }
 }
-// eventuellt överflödigt
+/* eventuellt överflödigt
 void MainWindow::on_spinBoxRed_valueChanged(int value)
 {
 
 }
-// eventuellt överflödigt
 void MainWindow::on_spinBoxGreen_valueChanged(int value)
 {
 
 }
-// eventuellt överflödigt
+
 void MainWindow::on_spinBoxBlue_valueChanged(int value)
 {
 
 }
-
+*/
 void MainWindow::on_quitButton_clicked()
 {
     qApp->exit();
