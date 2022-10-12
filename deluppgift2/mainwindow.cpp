@@ -19,22 +19,12 @@ void MainWindow::on_lineEdit_returnPressed()
 {
     // hämta värdet från lineEdit
     int i = ui->lineEdit->text().toInt();
-    // tillskriv värdet spinboxstregring
+    // tillskriv värdet spinboxstegring
     ui->spinBoxBlue->setSingleStep(i);
     ui->spinBoxGreen->setSingleStep(i);
     ui->spinBoxRed->setSingleStep(i);
 }
-/* eventuellt överflödigt
-void MainWindow::on_increaseButton_clicked()
-{
 
-}
-
-void MainWindow::on_decreaseButton_clicked()
-{
-
-}
-*/
 void MainWindow::on_verticalSliderRed_valueChanged(int value)
 {
     QMessageBox message;
@@ -80,21 +70,7 @@ void MainWindow::on_verticalSliderBlue_valueChanged(int value)
         message.exec();
     }
 }
-/* eventuellt överflödigt
-void MainWindow::on_spinBoxRed_valueChanged(int value)
-{
 
-}
-void MainWindow::on_spinBoxGreen_valueChanged(int value)
-{
-
-}
-
-void MainWindow::on_spinBoxBlue_valueChanged(int value)
-{
-
-}
-*/
 void MainWindow::on_quitButton_clicked()
 {
     qApp->exit();
