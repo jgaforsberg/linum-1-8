@@ -1,20 +1,38 @@
 #include "window.h"
 #include <QApplication>
 #include <QPushButton>
+#include <QPushButton>
 
 Window::Window(QWidget *parent) : QWidget(parent)
 {
     // set window size
-    setFixedSize(1280, 720);
+    setFixedSize(600, 400);
 
     // set and position buttons
     quitButton = new QPushButton("Avsluta", this);
-    quitButton->setGeometry(580, 600, 100, 50);
-    quitButton->setCheckable(true);
-
+    quitButton->setGeometry(250, 250, 100, 50);
+    passButton = new QPushButton("Godkänd", this);
+    passButton->setGeometry(175, 150, 100, 50);
+    failButton = new QPushButton("Underkänd", this);
+    failButton->setGeometry(325, 150, 100, 50);
+    // set and position labels
+    statement = new QLabel("Deluppgift 1 bedöms: ", this);
+    statement->setGeometry(225, 100, 150, 50);
+    message = new QLabel("Uppgiften bedömd! ", this);
+    message->setGeometry(225, 200, 300, 50);
 
     // button connections
     connect (quitButton, SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
+    connect (passButton, SIGNAL(clicked(bool)), this, SLOT(passButtonClicked(bool)));
+    connect (failButton, SIGNAL(clicked(bool)), this, SLOT(passButtonClicked(bool)));
 
 }
 
+void Window::passButtonClicked(bool checked)
+{
+    // function body
+}
+void Window::failButtonClicked(bool checked)
+{
+    // function body
+}
