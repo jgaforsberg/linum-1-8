@@ -11,8 +11,8 @@ class Window : public QWidget
 public:
     explicit Window(QWidget *parent = 0);
 private slots:
-    void passButtonClicked(bool clicked);
-    void failButtonClicked(bool clicked);
+    void passButtonClicked();
+    void failButtonClicked();
 private:
     QPushButton *quitButton;
     QPushButton *passButton;
