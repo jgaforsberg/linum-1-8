@@ -1,14 +1,13 @@
-author: gufo0047
+author: jgaforsberg gufo0047 gusfor-1 gufr22
 
-Bibliotek för att skapa grafiska användargränssnitt
+GUI
 
-Qt och Qt Creator
+Qt & Qt Creator
 
-Versionshantering med Git och Github
+Version control with Git & Github
 
-Grunduppgift 1:
-Skapa en enkel applikation med hjälp av Qt Creator och C++. Grafisk design och logik i C-koden
-Skapas enligt guiden i Qt for Beginners
+1:
+Create a simple application with QT Creator and C++, according to QT for beginners tutorial
 
-Grunduppgift 2:
-Skapa grafisk design med XML via Qt Designer
+2:
+Create graphical design using XML and QT Designer
